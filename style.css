@@ -33,6 +33,10 @@ body {
 
 /* ----- zde začni psát vlastní CSS ----- */
 
+:root {
+    --primary: #48418e;
+}
+
 h1 {
     font-size: 85px;
     margin: 0;
@@ -43,7 +47,7 @@ h1 {
 h2 {
     font-weight: 700;
     font-size: 20px;
-    color:#48418e;
+    color: var(--primary);
 }
 
 .txt-intro {
@@ -57,7 +61,6 @@ h2 {
 
 header nav {
     display: flex;
-    /*position: absolute;*/
     width: 100%;
 }
 
@@ -68,25 +71,37 @@ a {
 .main-nav {
     padding-right: 4rem;
     padding: 1rem 2rem;
-    color: #48418e;
+    color: var(--primary);
+}
+
+a.main-nav:focus {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+a.main-nav:hover{
+    font-weight: bold;
 }
 
 .second-nav {
     color: white;
-    border: 1px solid white;
-    border-radius: 10px;
     padding: 1rem 2rem;
     margin-right: 1.5rem;
     font-size: 20px;
 }
 
+
 a.second-nav {
     box-shadow: -1px 3px 4px 2px rgba(0, 0, 0, 0.212);
+    border: 1px solid white;
+    border-radius: 10px;
 }
 
-nav a:hover{
-    font-weight: bold;
+a.second-nav:focus {
+    background-color: var(--primary);
+    transition-duration: 0.3s;
 }
+
 
 .graphics {
     display: flex;
@@ -158,6 +173,34 @@ nav a:hover{
 footer {
     text-align: center;
     padding: 0.5rem;
-    background-color: #48418e;
+    background-color: var(--primary);
     color: white;
 }
+
+
+@media screen and (max-width: 480px) {
+        
+    .obal {
+        width: 100%;
+    }
+
+    .graphics {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .graph-right {
+        align-self: flex-end;
+    }
+
+    .picandtext {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    }
+
