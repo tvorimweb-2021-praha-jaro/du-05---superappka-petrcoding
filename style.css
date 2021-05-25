@@ -1,6 +1,15 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, ::after, ::before { box-sizing: inherit; }
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+ ::after,
+ ::before {
+    box-sizing: inherit;
+}
+
 
 /*
  BARVY
@@ -24,16 +33,19 @@ body {
 }
 
 .obal {
-    max-width: 960px; /* obsah stránky je omezený do pruhu širokého 960px */
-    margin: 0 auto; /* pruh je na stránce vycentrovaný */
+    max-width: 960px;
+    /* obsah stránky je omezený do pruhu širokého 960px */
+    margin: 0 auto;
+    /* pruh je na stránce vycentrovaný */
     background: white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     position: relative;
 }
 
+
 /* ----- zde začni psát vlastní CSS ----- */
 
-:root {
+ :root {
     --primary: #48418e;
 }
 
@@ -160,7 +172,6 @@ a.second-button:focus {
     width: 320px;
 }
 
-
 .boxes {
     padding: 2rem;
     display: flex;
@@ -176,44 +187,36 @@ footer {
 }
 
 @media screen and (max-width: 936px) {
-
     .graphics {
         flex-wrap: nowrap;
     }
-
     a.second-nav {
         display: flex;
         align-items: center;
         margin-top: 1rem;
     }
-
     .second-nav {
         justify-content: center;
     }
-
     .pic-phone {
         display: none;
     }
-
-@media screen and (max-width: 610px) {
-
-    .graph-left h1,
-    .graph-left p {
-        font-size: 20px;
-    } 
-
-    .second-nav {
-        font-size: 15px;
+    @media screen and (max-width: 610px) {
+        .graph-left h1,
+        .graph-left p {
+            font-size: 20px;
+        }
+        .second-nav {
+            font-size: 15px;
+        }
+        .graph-right {
+            align-self: flex-end;
+        }
+        .picandtext {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+        }
     }
-
-    .graph-right {
-        align-self: flex-end;
-    }
-
-    .picandtext {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;  
-    }
-    }
+}
